@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imee Jean - A IT Student</title>
+  <title>Floating Image</title>  
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+
+   
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="video-overlay"></div>
+
+
+  
+  <header class="header">
+    <div class="logo">My Portfolio.</div>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#module">Module</a>
+      <a href="#activities">Activities</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  
+  <section class="hero" id="home">
+    <div class="content">
+      <p>Hello, It's Me</p>
+      <h1>Imee Jean</h1>
+      <h2>And I am <span class="developer-role">Student of Davao Del
+         Sur State College taking
+        Diploma in Information Technology
+      </span></h2>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+    <div class="hero-image">
+        <div class="Sticky-image-wrapper"></div>
+     <img src="https://github.com/imee04/imee-jean-geronda/blob/main/imee2.jpg?raw=true" alt="glow-image" class="glow-image">
+    </div>
+  </section>
+
+  
+  <section class="about-me-section" id="about">  
+  <div class="about-container">
+    <div class="about-image">
+        <div class="Sticky-image-wrapper"></div>
+      <img src="https://github.com/imee04/imee-jean-geronda/blob/main/imee2.jpg?raw=true" alt="Imee Jean" />
+    </div>
+    <div class="about-content">
+      <h2 class="section-title">About Me</h2>
+      <h3>Web Development Enthusiast</h3>
+      <p>
+        I am Imee Jean Geronda, an enthusiastic and results-oriented Information Technology
+         student at Davao del Sur State College (DSSC). I specialize in Web Development and am passionate 
+         about using technology to address real-world problems. My current focus is on the digitalization 
+         of local businesses and educational platforms in the Davao Region. I'm eager to contribute 
+         to meaningful projects and grow into a dynamic IT role.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- 🔹 Modal Box -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+  </div>
+</div>
+
+<section class="services-section" id="module">
+  <h2 class="section-title">Modules</h2>
+  <div class="services-grid">
+
+    <div class="service-box">
+      <i class="fas fa-laptop-code service-icon"></i>
+      <h4>Module 1-2</h4>
+      <p>
+        Introduction to the internet, websites, and HTML fundamentals.
+      </p>
+       <a href="javascript:void(0)" class="service-btn"
+         onclick="openModal('Module 1-2', 'In this module, students will gain an understanding of how the internet functions, including key concepts such as servers, clients, and protocols. They will learn to explain the basic structure of a website and the process by which web pages are delivered to users. Additionally, students will identify and use fundamental HTML tags to create well-structured web pages, applying text formatting, hyperlinks, images, and lists effectively within HTML documents. They will also develop the ability to create simple, semantic web pages following HTML5 best practices and gain an introductory understanding of the role of CSS in styling websites.', 'module')">
+         Read More
+    </a>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-palette service-icon"></i>
+      <h4>Module 3-4</h4>
+      <p>
+        Learn JavaScript basics: variables, control structures, functions, and DOM.
+      </p>
+      <a href="javascript:void(0)" class="service-btn"
+         onclick="openModal('Module 3-4', 'In this module, students will learn the fundamentals of JavaScript, including variables, data types, operators, conditional statements, loops, and functions. They will explore how to manipulate the Document Object Model (DOM) to create dynamic and interactive web pages. The module covers event handling, working with arrays and objects, debugging techniques, and best coding practices. By the end, students will be able to build responsive client-side features and gain a foundational understanding of asynchronous programming concepts.', 'module')">
+         Read More
+     </a>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-server service-icon"></i>
+      <h4>Module 5</h4>
+      <p>
+        Dive into backend development with Node.js/Django, and databases.
+      </p>
+      <a href="javascript:void(0)" class="service-btn"
+         <a href="javascript:void(0)" class="service-btn"
+   onclick="openModal('Module 5', 'This module introduces students to backend development, focusing on setting up environments using Node.js or Django. They will learn how servers handle client requests, build RESTful APIs, and connect to databases to perform CRUD operations. The module also covers authentication and authorization, structuring scalable backend applications, deployment basics, and integrating backend services with frontend interfaces to build full-stack web applications.', 'module')">
+   Read More
+</a>
+
+    </a>
+    </div>
+      
+  <script>
+    function openModal(title, description, sectionId) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-description').textContent = description;
+      document.getElementById('modal').classList.remove('hidden');
+
+      
+      document.getElementById('modal').dataset.returnSection = sectionId;
+    }
+
+    document.querySelector('.close-btn').addEventListener('click', function () {
+      const modal = document.getElementById('modal');
+      modal.classList.add('hidden');
+
+    
+      const sectionId = modal.dataset.returnSection;
+      if (sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+  </div>
+</section>
+
+  
+  <section class="Activities-section" id="activities">
+    <h2 class="section-title">Activities</h2>
+    <div class="project-grid">
+      <div class="project-item"><img src="https://github.com/imee04/imee-jean-geronda/blob/main/1.jpg?raw=true" alt="Activity 1"/></div>
+      <div class="project-item"><img src="https://github.com/imee04/imee-jean-geronda/blob/main/2.jpg?raw=true" alt="Activity 2"/></div>
+      <div class="project-item"><img src="https://github.com/imee04/imee-jean-geronda/blob/main/3.jpg?raw=true" alt="Activity 3"/></div>
+      <div class="project-item"><img src="https://github.com/imee04/imee-jean-geronda/blob/main/4.jpg?raw=true" alt="Activity 4"/></div>
+      <div class="project-item"><img src="https://github.com/imee04/imee-jean-geronda/blob/main/5.jpg?raw=true" alt="Activity 5"/></div>
+      <div class="project-item"><img src="https://github.com/imee04/imee-jean-geronda/blob/main/6.jpg?raw=true" alt="Activity 6"/></div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+  <h3 class="section-title">Skills</h3>
+  <div class="project-grid">
+    <div class="project-item"><img src="image.jpg/1.png" alt="skill 1"/></div>
+    <div class="project-item"><img src="image.jpg/2.png" alt="skill 2"/></div>
+    <div class="project-item"><img src="image.jpg/3.png" alt="skill 3"/></div>
+    <div class="project-item"><img src="image.jpg/4.png" alt="skill 4"/></div>
+    <div class="project-item"><img src="image.jpg/5.png" alt="skill 5"/></div>
+    <div class="project-item"><img src="image.jpg/6.png" alt="skill 6"/></div>
+  </div>
+</section>
+
+
+  <section class="contact-section" id="contact">
+    <h2 class="section-title">Contact Me!</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea cols="30" rows="10" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-send">Send Message</button>
+    </form>
+  </section>
+
+  
+  <footer class="footer">
+    <p>Copyright &copy; 2025 by Imee Jean Geronda | All Rights Reserved.</p>
+  </footer>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
